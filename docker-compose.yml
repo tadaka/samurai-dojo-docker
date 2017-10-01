@@ -16,5 +16,5 @@ services:
     volumes:
       - /var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=dojo
-      - MYSQL_DATABASE=dojo_basic
+      - MYSQL_ROOT_PASSWORD=samurai
+      - MYSQL_DATABASE=samurai_dojo_basic
