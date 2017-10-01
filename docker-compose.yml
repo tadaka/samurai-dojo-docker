@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  php:
+    build: app
+    ports:
+      - "30080:80"
+      - "30443:443"
+    volumes:
+      - ./apps/Samurai-Dojo/basic:/var/www/html
+    links:
+      - db
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - /var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=dojo
+      - MYSQL_DATABASE=dojo_basic

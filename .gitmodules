@@ -1,0 +1,4 @@
+[submodule "apps/Samurai-Dojo"]
+	path = apps/Samurai-Dojo
+	url = https://github.com/SamuraiWTF/Samurai-Dojo.git
+	branch = master
