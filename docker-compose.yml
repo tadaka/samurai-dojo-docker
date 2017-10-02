@@ -9,12 +9,30 @@ services:
     volumes:
       - ./apps/Samurai-Dojo/basic:/var/www/html
     links:
-      - db
+      - basicdb
 
-  db:
+  php:
+    build: apps
+    ports:
+      - "31080:80"
+      - "31443:443"
+    volumes:
+      - ./apps/Samurai-Dojo/scavenger:/var/www/html
+    links:
+      - scavengerdb
+
+  basicdb:
     image: mysql:5.7
     volumes:
       - /var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=samurai
       - MYSQL_DATABASE=samurai_dojo_basic
+
+  scavengerdb:
+    image: mysql:5.7
+    volumes:
+      - /var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=samurai
+      - MYSQL_DATABASE=samurai_dojo_scavenger
