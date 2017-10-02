@@ -2,7 +2,7 @@ version: '2'
 
 services:
   php:
-    build: app
+    build: apps
     ports:
       - "30080:80"
       - "30443:443"
